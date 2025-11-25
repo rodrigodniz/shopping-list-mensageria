@@ -20,7 +20,7 @@ async function start() {
     await ch.assertQueue(queue, { durable: true });
     await ch.bindQueue(queue, exchange, routingKey);
 
-    console.log("📨 Notifications Worker conectado.");
+    console.log("Notifications Worker conectado.");
     console.log("Aguardando eventos...");
 
     ch.consume(queue, (msg) => {
@@ -31,7 +31,7 @@ async function start() {
       const listId = event.list?.id;
       const email = event.user?.email;
 
-      console.log(`📧 Enviando comprovante da lista ${listId} para o email ${email}`);
+      console.log(` Enviando comprovante da lista ${listId} para o email ${email}`);
 
       ch.ack(msg);
     });

@@ -20,7 +20,7 @@ async function start() {
     await ch.assertQueue(queue, { durable: true });
     await ch.bindQueue(queue, exchange, routingKey);
 
-    console.log("📊 Analytics Worker conectado.");
+    console.log("Analytics Worker conectado.");
     console.log("Aguardando eventos...");
 
     ch.consume(queue, (msg) => {
@@ -38,7 +38,7 @@ async function start() {
       }, 0);
 
       console.log(
-        `📈 Atualizando dashboard: lista ${listId} total calculado = R$ ${total.toFixed(
+        `Atualizando dashboard: lista ${listId} total calculado = R$ ${total.toFixed(
           2
         )}`
       );
